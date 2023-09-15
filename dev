@@ -1,0 +1,35 @@
+import unittest
+
+def fizzBuzz(nombre):
+    if nombre % 3 == 0 and nombre % 5 == 0:
+        return "FizzBuzz"
+    elif nombre % 3 == 0:
+        return "Fizz"
+    elif nombre % 5 == 0:
+        return "Buzz"
+    else:
+        return str(nombre)
+
+class TestFizzBuzz(unittest.TestCase):
+    def test_fizz(self):
+        self.assertEqual(fizzBuzz(3), "Fizz")
+        self.assertEqual(fizzBuzz(6), "Fizz")
+        self.assertEqual(fizzBuzz(9), "Fizz")
+
+    def test_buzz(self):
+        self.assertEqual(fizzBuzz(5), "Buzz")
+        self.assertEqual(fizzBuzz(10), "Buzz")
+        self.assertEqual(fizzBuzz(20), "Buzz")
+
+    def test_fizzbuzz(self):
+        self.assertEqual(fizzBuzz(15), "FizzBuzz")
+        self.assertEqual(fizzBuzz(30), "FizzBuzz")
+        self.assertEqual(fizzBuzz(45), "FizzBuzz")
+
+    def test_other_numbers(self):
+        self.assertEqual(fizzBuzz(1), "1")
+        self.assertEqual(fizzBuzz(7), "7")
+        self.assertEqual(fizzBuzz(11), "11")
+
+if __name__ == '__main__':
+    unittest.main()
